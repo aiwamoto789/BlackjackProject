@@ -1,7 +1,7 @@
 package com.skilldistillery.cards.common;
 
 
-	import java.util.ArrayList;
+import java.util.ArrayList;
 	import java.util.InputMismatchException;
 	import java.util.List;
 	import java.util.Scanner;
@@ -12,16 +12,17 @@ package com.skilldistillery.cards.common;
 	    BlackJackApp bj = new BlackJackApp();
 	    bj.run();
 	  }
-	  
+	  //run app
 	  void run() {
 	    Deck deck = new Deck();
 	    
 	    Scanner sc = new Scanner(System.in);
-	    System.out.print("How many cards would you like? ");
+	    System.out.print("Welcome.  Would you like to play a round of Blackjack? "+
+	    " 1.  Yes, 2.  No");
 	    
 	    try {
-			int numCards = sc.nextInt();
-	      if(numCards > 52) {
+			int selection = sc.nextInt();
+	      if(selection > 2 || selection < 1) {
 	        throw new InputMismatchException();
 	      }
 	      
